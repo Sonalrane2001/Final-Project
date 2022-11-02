@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+th:replace="Hotel/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body data-spy="scroll">
+		
+		
+		<section>
+		<div class="container">
+			<h3 class="text-center">Feeders.h</h3>
+			 <!--   <div th:if="${session.msg}"
+				 class="text-center"
+				role="alert">
+
+				<h4 th:text="${session.msg}"></h4>
+				<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+			</div> 
+-->
+			<div class="col-md-12 mt-3" th:each="n:${list}">
+				<div class="card paint-card">
+					<div class="card-body">
+						
+						<h5>[[${n.name}]]</h5>
+						<h5>[[${n.address}]]</h5>
+						<h5>[[${n.bhaji}]]</h5>
+						<h5>[[${n.paratha}]]</h5>
+						<h5>[[${n.rice}]]</h5>
+						<div class="text-center">
+							<a th:href="@{'/Hotel/Hotel_edit_info/'+${n.id}}" class="btn btn-primary btn-sm">Edit</a>
+							<a th:href="@{'/Hotel/Hotel_delete_info/'+${n.id}}" class="btn btn-primary btn-sm">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--  <div class="col-md-12 mt-3">
+				<div class="card paint-card">
+					<div class="card-body">
+						
+
+						<h5>title</h5>
+						<p>
+							Description<br> <br> <span class="font-weight-bold">Upload
+								Date :</span> 2020-31-01
+
+						</p>
+						<div class="text-center">
+							<a href="#" class="btn btn-primary btn-sm">Edit</a>
+							
+							 <a href="#" class="btn btn-danger btn-sm ml-2">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			
+
+	</section>
+		
+		
+</body>
+</html>

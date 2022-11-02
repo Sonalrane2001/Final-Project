@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+th:replace="Hotel/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="card mt-2 paint-card">
+						<h1 class="text-center">Register Here</h1>
+
+						<!--alert message  -->
+						   <div th:if="${session.msg}"
+							class="text-center">
+
+							<h4 class="text-success" th:text="${session.msg}"></h4>
+							<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+						</div> 
+						<!--alert message  -->
+
+						<div class="card-body">
+							<form th:action="@{/Hotel/saveFoodInfo}" method="post">
+
+								<div class="form-group mt-2">
+									<label>Enter Name</label> <input type="text" name="name"
+										class="form-control" required="required">
+
+								</div>
+
+								<div class="form-group mt-2">
+									<label>Enter Address</label> <input type="text" name="address"
+										class="form-control" required="required">
+
+								</div>
+
+											
+
+								<div class="form-group mt-2">
+									<label>Enter No.Of.Dish.Bhaji</label> <input type="number" name="bhaji" min="1"
+										class="form-control" required="required">
+
+								</div>
+								<div class="form-group mt-2">
+									<label>Enter No.Of.Paratha</label> <input type="number" name="paratha" min="1"
+										class="form-control" required="required">
+
+								</div>
+								<div class="form-group mt-2">
+									<label>Enter No.Of.Plate.Rice</label> <input type="number" name="rice" min="1"
+										class="form-control" required="required">
+
+								</div>
+
+								<div class="text-center mt-3">
+									<button class="btn bg-primary text-white">Submit</button>
+								
+								</div>
+
+
+
+
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+</section>
+
+
+</body>
+</html>

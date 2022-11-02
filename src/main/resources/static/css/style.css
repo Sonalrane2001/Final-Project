@@ -1,0 +1,44 @@
+.backing{
+	background: url("../img/hungry.jpg");
+	height:100%;
+	width:100%;
+	background-repeat:no-repeat;
+	position:fixed;
+	background-size=cover;
+}
+.backing1{
+	background: url("../img/gov.jpg");
+	height:100%;
+	width:100%;
+	background-repeat:no-repeat;
+	position:fixed;
+	background-size=cover;
+}
+.backing2{
+	background: url("../img/hotel.jpg");
+	height:100%;
+	width:100%;
+	background-repeat:no-repeat;
+	position:fixed;
+	background-size=cover;
+}
+
+
+.backing3{
+	background: url("../img/ngo.jpg");
+	height:100%;
+	width:100%;
+	background-repeat:no-repeat;
+	position:fixed;
+	background-size=cover;
+}
+.navbar .nav-item .nav-link{
+	font-size:20px;
+	color:white;
+}
+
+.navbar .nav-item:hover .nav-link{
+	background:white;
+	color:black;
+	border-radius:10px;
+}

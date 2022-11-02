@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+th:replace="baseGov::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="card mt-2 paint-card">
+						<h1 class="text-center">Register Here</h1>
+
+						<!--alert message --> 
+						  <div th:if="${session.msg}"
+							class="text-center">
+
+							<h4 class="text-success" th:text="${session.msg}"></h4>
+							<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+						</div> 
+	
+						<!--alert message  -->
+
+						<div class="card-body">
+							<form th:action="@{/saveGov}" method="post">
+
+
+
+								<div class="form-group mt-2">
+									<label>Enter Name</label> <input type="text" name="name"
+										class="form-control" required="required">
+
+								</div>
+
+								<div class="form-group mt-2">
+									<label>Enter Email</label> <input type="email" name="email"
+										class="form-control" required="required">
+								</div>
+
+								<div class="form-group mt-2">
+									<label>Enter Password</label> <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+										name="password" class="form-control" required="required">
+								</div>
+								
+								
+								
+								<div class="form-group mt-2">
+									<label>Enter Phone</label> <input type="tel" name="phone" placeholder="1234567890" pattern="[0-9]{10}"
+										class="form-control" required="required">
+
+								</div>
+								
+								<div class="form-group mt-2">
+									<label>Enter City</label> <input type="text" name="city"
+										class="form-control" required="required">
+
+								</div>
+								
+
+
+
+								<div class="text-center mt-3">
+									<button class="btn bg-primary text-white">Submit</button>
+								</div>
+
+
+
+
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+</section>
+</body>
+</html>
